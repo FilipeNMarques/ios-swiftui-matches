@@ -1,0 +1,24 @@
+//
+//  development_example.xcconfig
+//  cs-go-matches
+//
+//  Created by Filipe Marques on 02/09/24.
+//
+
+///
+/// To run the project successfully, you need to configure the API key for PandaScore.
+/// Follow these steps to set up your development environment:
+///
+/// 1. Copy the configuration file:
+///    - Duplicate `development.xcconfig.example` and rename it to `development.xcconfig`
+/// 2. Set up your API key:
+///    - Open `development.xcconfig`
+///    - Locate the `API_KEY` field
+///    - Replace the placeholder with your PandaScore API key
+/// 3. Verify Xcode configuration:
+///    - Ensure your Xcode project is set to use `development.xcconfig` in build settings
+///
+/// - **Important:** Never commit `development.xcconfig` to version control to protect your API key.
+///
+
+API_KEY=

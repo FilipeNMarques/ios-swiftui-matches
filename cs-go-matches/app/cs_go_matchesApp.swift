@@ -11,7 +11,7 @@ import SwiftUI
 struct cs_go_matchesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MatchesListView()
         }
     }
 }
