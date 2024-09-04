@@ -10,7 +10,7 @@ import Foundation
 struct APIEndpoints {
     static let baseURL = "https://api.pandascore.co"
 
-    static func matches(pageSize: Int = 5, sort: String = "-status") -> URL {
+    static func matches(pageSize: Int = 30, sort: String = "-status") -> URL {
         URL(string: "\(baseURL)/csgo/matches?page[size]=\(pageSize)&sort=\(sort)")!
     }
 

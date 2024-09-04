@@ -22,7 +22,15 @@ final class MatchService: MatchServiceProtocol {
             throw NSError(domain: "MatchService", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid JSON format"])
         }
 
-        let matches = jsonArray.compactMap { MatchParser.parse(json: $0) }
+        let matches = jsonArray.compactMap { json -> MatchListModel? in
+            let match = MatchParser.parse(json: json)
+            if match == nil {
+                print("Failed to parse match: \(json)")
+            }
+            return match
+        }
+
+        print("Parsed matches count: \(matches.count)")
 
         return matches
     }

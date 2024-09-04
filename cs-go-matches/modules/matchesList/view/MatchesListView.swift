@@ -24,6 +24,7 @@ struct MatchesListView: View {
                     }
                     .padding()
                 }
+                .scrollIndicators(.hidden)
                 .navigationTitle("Partidas")
                 .navigationDestination(for: MatchListModel.self) { match in
                     MatchDetailView(match: match)
@@ -53,7 +54,7 @@ struct MatchDetailView: View {
             Text(match.name)
                 .font(.title)
 
-            Text("Status: \(match.status.displayText)")
+            Text("Status: \(match.status)")
                 .font(.headline)
 
             if let beginAt = match.beginAt {
