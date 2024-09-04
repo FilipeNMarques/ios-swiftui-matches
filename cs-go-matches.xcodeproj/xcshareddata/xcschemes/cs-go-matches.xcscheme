@@ -35,7 +35,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B7B103472C85F0F400C96126"
+               BlueprintIdentifier = "B7BFFE6C2C88AD3E00A7EAEF"
                BuildableName = "cs-go-matchesTests.xctest"
                BlueprintName = "cs-go-matchesTests"
                ReferencedContainer = "container:cs-go-matches.xcodeproj">
@@ -49,6 +49,17 @@
                BlueprintIdentifier = "B7B103512C85F0F400C96126"
                BuildableName = "cs-go-matchesUITests.xctest"
                BlueprintName = "cs-go-matchesUITests"
+               ReferencedContainer = "container:cs-go-matches.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B7BFFE6C2C88AD3E00A7EAEF"
+               BuildableName = "cs-go-matchesTests.xctest"
+               BlueprintName = "cs-go-matchesTests"
                ReferencedContainer = "container:cs-go-matches.xcodeproj">
             </BuildableReference>
          </TestableReference>

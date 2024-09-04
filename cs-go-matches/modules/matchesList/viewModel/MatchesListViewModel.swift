@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
-import Observation
 
+@Observable
 class MatchesListViewModel: ObservableObject {
-    @Published var matches: [MatchListModel] = []
-    @Published var isLoading = false
+    var matches: [MatchListModel] = []
+    var isLoading = false
+    var error: AppError?
 
     private let matchService: MatchServiceProtocol
 
@@ -23,8 +24,12 @@ class MatchesListViewModel: ObservableObject {
         isLoading = true
         do {
             matches = try await matchService.fetchMatches()
+        } catch let error as AppError {
+            self.error = error
+            debugPrint("App error: ", error)
         } catch {
-            print("Error fetching matches: \(error)")
+            self.error = .unknown(error.localizedDescription
+            debugPrint("unknown error: ", error))
         }
         isLoading = false
     }

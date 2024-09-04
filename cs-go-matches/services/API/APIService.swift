@@ -7,14 +7,18 @@
 
 import Foundation
 
+protocol URLSessionProtocol {
+    func data(for request: URLRequest) async throws -> (Data, URLResponse)
+}
+
 protocol APIServiceProtocol {
     func request(_ url: URL) async throws -> Data
 }
 
 final class APIService: APIServiceProtocol {
-    private let session: URLSession
+    private let session: URLSessionProtocol
 
-    init(session: URLSession = .shared) {
+    init(session: URLSessionProtocol = URLSession.shared) {
         self.session = session
     }
 
