@@ -5,9 +5,9 @@ CSTV is an iOS app that displays CS:GO matches happening across several worldwid
 ## Screenshots
 
 <p float="left">
-  <img src="screenshots/app-icon.png" width="300" />
-  <img src="screenshots/home-screen.png" width="300" />
-  <img src="screenshots/details-page.png" width="300" /> 
+  <img src="screenshots/app-icon.png" width="220" />
+  <img src="screenshots/home-screen.png" width="220" />
+  <img src="screenshots/details-page.png" width="220" /> 
 </p>
 
 ## How to Run
