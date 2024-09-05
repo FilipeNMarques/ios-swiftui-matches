@@ -13,7 +13,7 @@ CS:GO Matches is an iOS app that displays CS:GO matches happening across several
 ## How to Run
 
 1. Clone the repository
-2. Copy `development.xcconfig.example` to `development.xcconfig`
+2. Copy `development.xcconfig.example`
 3. Remove the `.example` extension from the copied file
 4. Add your PandaScore API key to the `API_KEY` field in `development.xcconfig`
 5. Open the project in Xcode and run
