@@ -10,6 +10,12 @@
 		B70125DF2C88D2B800F45558 /* MockAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70125DE2C88D2B800F45558 /* MockAPIService.swift */; };
 		B70125E12C88D30F00F45558 /* MatchServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70125E02C88D30F00F45558 /* MatchServiceTests.swift */; };
 		B70125E52C88D49400F45558 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70125E42C88D49400F45558 /* MockURLSession.swift */; };
+		B79383502C89EC5D0047C466 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B793834F2C89EC5D0047C466 /* PlayerModel.swift */; };
+		B79383532C89EDE40047C466 /* MatchDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79383522C89EDE40047C466 /* MatchDetailViewModel.swift */; };
+		B79383562C89EE7A0047C466 /* MatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79383552C89EE7A0047C466 /* MatchDetailView.swift */; };
+		B79383582C8A01620047C466 /* PlayerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79383572C8A01620047C466 /* PlayerParser.swift */; };
+		B793835A2C8A453E0047C466 /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79383592C8A453E0047C466 /* CustomBackButton.swift */; };
+		B793835C2C8A46760047C466 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B793835B2C8A46760047C466 /* RoundedCorner.swift */; };
 		B7A6D55B2C879862004F92CB /* MatchRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6D55A2C879862004F92CB /* MatchRowView.swift */; };
 		B7B1033C2C85F0F300C96126 /* cs_go_matchesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B1033B2C85F0F300C96126 /* cs_go_matchesApp.swift */; };
 		B7B103402C85F0F400C96126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7B1033F2C85F0F400C96126 /* Assets.xcassets */; };
@@ -50,6 +56,12 @@
 		B70125DE2C88D2B800F45558 /* MockAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIService.swift; sourceTree = "<group>"; };
 		B70125E02C88D30F00F45558 /* MatchServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchServiceTests.swift; sourceTree = "<group>"; };
 		B70125E42C88D49400F45558 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		B793834F2C89EC5D0047C466 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
+		B79383522C89EDE40047C466 /* MatchDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailViewModel.swift; sourceTree = "<group>"; };
+		B79383552C89EE7A0047C466 /* MatchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailView.swift; sourceTree = "<group>"; };
+		B79383572C8A01620047C466 /* PlayerParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerParser.swift; sourceTree = "<group>"; };
+		B79383592C8A453E0047C466 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
+		B793835B2C8A46760047C466 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		B7A6D55A2C879862004F92CB /* MatchRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRowView.swift; sourceTree = "<group>"; };
 		B7B103382C85F0F300C96126 /* cs-go-matches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cs-go-matches.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7B1033B2C85F0F300C96126 /* cs_go_matchesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cs_go_matchesApp.swift; sourceTree = "<group>"; };
@@ -127,6 +139,22 @@
 				B7BC2E982C88D6C00038BC18 /* APIServiceTests.swift */,
 			);
 			path = api;
+			sourceTree = "<group>";
+		};
+		B79383512C89EDD90047C466 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B79383522C89EDE40047C466 /* MatchDetailViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		B79383542C89EE6F0047C466 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				B79383552C89EE7A0047C466 /* MatchDetailView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		B7A6D55C2C87C674004F92CB /* viewModel */ = {
@@ -246,6 +274,8 @@
 		B7B1036F2C8602FD00C96126 /* matchDetail */ = {
 			isa = PBXGroup;
 			children = (
+				B79383542C89EE6F0047C466 /* view */,
+				B79383512C89EDD90047C466 /* viewModel */,
 				B7B103702C86032600C96126 /* model */,
 			);
 			path = matchDetail;
@@ -255,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				B7B103742C86627200C96126 /* MatchDetail.swift */,
+				B793834F2C89EC5D0047C466 /* PlayerModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -263,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				B7B103762C86666C00C96126 /* API */,
+				B7BFFE5F2C888F3F00A7EAEF /* match */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -271,7 +303,6 @@
 			isa = PBXGroup;
 			children = (
 				B7B103792C86670800C96126 /* APIService.swift */,
-				B7BFFE5F2C888F3F00A7EAEF /* match */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -281,6 +312,8 @@
 			children = (
 				B7B103832C866E3F00C96126 /* EnvConfigurations.swift */,
 				B7BC2E9C2C88D8A20038BC18 /* AppError.swift */,
+				B79383592C8A453E0047C466 /* CustomBackButton.swift */,
+				B793835B2C8A46760047C466 /* RoundedCorner.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -292,6 +325,7 @@
 				B7B1037B2C86673000C96126 /* MatchService.swift */,
 				B7B1037D2C8667FD00C96126 /* MatchServiceProtocols.swift */,
 				B7BFFE602C888F7300A7EAEF /* MatchParser.swift */,
+				B79383572C8A01620047C466 /* PlayerParser.swift */,
 			);
 			path = match;
 			sourceTree = "<group>";
@@ -421,14 +455,20 @@
 				B7BC2E9D2C88D8A20038BC18 /* AppError.swift in Sources */,
 				B7B103842C866E3F00C96126 /* EnvConfigurations.swift in Sources */,
 				B7B1037E2C8667FD00C96126 /* MatchServiceProtocols.swift in Sources */,
+				B79383562C89EE7A0047C466 /* MatchDetailView.swift in Sources */,
 				B7BFFE632C889DC200A7EAEF /* Collections.swift in Sources */,
 				B7B103782C8666D300C96126 /* APIEndpoints.swift in Sources */,
+				B79383532C89EDE40047C466 /* MatchDetailViewModel.swift in Sources */,
 				B7B103732C86624C00C96126 /* MatchListModel.swift in Sources */,
 				B7A6D55B2C879862004F92CB /* MatchRowView.swift in Sources */,
+				B79383502C89EC5D0047C466 /* PlayerModel.swift in Sources */,
 				B7BFFE612C888F7300A7EAEF /* MatchParser.swift in Sources */,
+				B79383582C8A01620047C466 /* PlayerParser.swift in Sources */,
 				B7B103752C86627200C96126 /* MatchDetail.swift in Sources */,
 				B7B1038A2C8754E600C96126 /* MatchesListView.swift in Sources */,
+				B793835A2C8A453E0047C466 /* CustomBackButton.swift in Sources */,
 				B7B103882C87543C00C96126 /* MatchesListViewModel.swift in Sources */,
+				B793835C2C8A46760047C466 /* RoundedCorner.swift in Sources */,
 				B7B1037C2C86673000C96126 /* MatchService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

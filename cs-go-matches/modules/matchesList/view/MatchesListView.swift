@@ -17,7 +17,7 @@ struct MatchesListView: View {
                 ScrollView {
                     LazyVStack(spacing: 16) {
                         ForEach(viewModel.matches) { match in
-                            NavigationLink(value: match) {
+                            NavigationLink(value: match.toMatchDetailModel()) {
                                 MatchRowView(match: match)
                             }
                         }
@@ -26,8 +26,16 @@ struct MatchesListView: View {
                 }
                 .scrollIndicators(.hidden)
                 .navigationTitle("Partidas")
-                .navigationDestination(for: MatchListModel.self) { match in
-                    MatchDetailView(match: match)
+                .toolbarTitleDisplayMode(.large)
+                .navigationDestination(for: MatchDetailModel.self) { matchDetail in
+                    MatchDetailView()
+                        .navigationBarBackButtonHidden(true)
+                        .environmentObject(MatchDetailViewModel(matchInfo: matchDetail))
+                        .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            CustomBackButton()
+                        }
+                    }
                 }
             }
             .overlay {
@@ -46,41 +54,21 @@ struct MatchesListView: View {
     }
 }
 
-struct MatchDetailView: View {
-    let match: MatchListModel
-
-    var body: some View {
-        VStack(spacing: 20) {
-            Text(match.name)
-                .font(.title)
-
-            Text("Status: \(match.status)")
-                .font(.headline)
-
-            if let beginAt = match.beginAt {
-                Text("Início: \(beginAt.formatted())")
-            }
-
-            Text("Liga: \(match.league.name)")
-
-            ForEach(match.opponents, id: \.id) { team in
-                VStack {
-                    if let imageUrlString = team.imageUrl, let imageUrl = URL(string: imageUrlString) {
-                        AsyncImage(url: imageUrl) { image in
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 100, height: 100)
-                        } placeholder: {
-                            ProgressView()
-                        }
-                    }
-                    Text(team.name)
-                        .font(.headline)
-                }
-            }
-        }
-        .padding()
+extension MatchListModel {
+    func toMatchDetailModel() -> MatchDetailModel {
+        return MatchDetailModel(
+            id: self.id,
+            leagueName: self.league.name,
+            serieName: self.serie.name,
+            opponents: self.opponents.map {
+                OpponentModel(
+                    id: $0.id,
+                    name: $0.name,
+                    imageUrl: $0.imageUrl
+                )
+            },
+            beginAt: self.beginAt
+        )
     }
 }
 

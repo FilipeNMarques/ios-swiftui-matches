@@ -7,41 +7,44 @@
 
 import Foundation
 
-struct MatchDetail: Codable {
-    let beginAt: Date
-    let opponents: [TeamDetail]
+struct MatchDetailModel: Hashable {
+    let id: Int
+    let leagueName: String
+    let serieName: String
+    let opponents: [OpponentModel]
+    let beginAt: Date?
 
-    enum CodingKeys: String, CodingKey {
-        case opponents
-        case beginAt = "begin_at"
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(leagueName)
+        hasher.combine(serieName)
+        hasher.combine(opponents)
+        hasher.combine(beginAt)
+    }
+
+    static func == (lhs: MatchDetailModel, rhs: MatchDetailModel) -> Bool {
+        return lhs.id == rhs.id &&
+               lhs.leagueName == rhs.leagueName &&
+               lhs.serieName == rhs.serieName &&
+               lhs.opponents == rhs.opponents &&
+               lhs.beginAt == rhs.beginAt
     }
 }
 
-struct TeamDetail: Codable {
-    let opponent: TeamInfo
-}
-
-struct TeamInfo: Codable {
+struct OpponentModel: Hashable {
     let id: Int
     let name: String
     let imageUrl: String?
-    let players: [Player]
 
-    enum CodingKeys: String, CodingKey {
-        case id, name, players
-        case imageUrl = "image_url"
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(name)
+        hasher.combine(imageUrl)
     }
-}
 
-struct Player: Codable, Identifiable {
-    let id: Int
-    let firstName: String?
-    let name: String
-    let imageUrl: String?
-
-    enum CodingKeys: String, CodingKey {
-        case id, name
-        case firstName = "first_name"
-        case imageUrl = "image_url"
+    static func == (lhs: OpponentModel, rhs: OpponentModel) -> Bool {
+        return lhs.id == rhs.id &&
+               lhs.name == rhs.name &&
+               lhs.imageUrl == rhs.imageUrl
     }
 }

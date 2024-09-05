@@ -11,6 +11,8 @@ protocol MatchesListServiceProtocol {
     func fetchMatches() async throws -> [MatchListModel]
 }
 
-protocol MatchDetailServiceProtocol {}
+protocol MatchDetailServiceProtocol {
+    func fetchMatchDetails(matchId: Int) async throws -> [PlayerModel]
+}
 
-typealias MatchServiceProtocol = MatchesListServiceProtocol
+typealias MatchServiceProtocol = MatchesListServiceProtocol & MatchDetailServiceProtocol

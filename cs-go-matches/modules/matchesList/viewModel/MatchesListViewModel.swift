@@ -28,8 +28,8 @@ class MatchesListViewModel: ObservableObject {
             self.error = error
             debugPrint("App error: ", error)
         } catch {
-            self.error = .unknown(error.localizedDescription
-            debugPrint("unknown error: ", error))
+            self.error = .unknown(error.localizedDescription)
+            debugPrint("unknown error: ", error)
         }
         isLoading = false
     }
