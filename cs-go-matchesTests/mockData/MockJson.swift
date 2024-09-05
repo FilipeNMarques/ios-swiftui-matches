@@ -25,7 +25,7 @@ struct TestData {
         "name": "Invalid Match",
         "status": "unknown"
     ]
-
+    
     static let validMatchesResponse = """
     [
         {
@@ -42,4 +42,43 @@ struct TestData {
         }
     ]
     """
+
+    static let validMatchDetailsJSON: [String: Any] = [
+        "id": 1,
+        "opponents": [
+            [
+                "id": 10,
+                "players": [
+                    [
+                        "id": 101,
+                        "name": "Player1",
+                        "first_name": "John",
+                        "image_url": "http://example.com/player1.png"
+                    ],
+                    [
+                        "id": 102,
+                        "name": "Player2",
+                        "first_name": "Jane",
+                        "image_url": "http://example.com/player2.png"
+                    ]
+                ]
+            ],
+            [
+                "id": 20,
+                "players": [
+                    [
+                        "id": 201,
+                        "name": "Player3",
+                        "first_name": "Bob",
+                        "image_url": "http://example.com/player3.png"
+                    ]
+                ]
+            ]
+        ]
+    ]
+
+    static let invalidMatchDetailsJSON: [String: Any] = [
+        "id": 1,
+        "someOtherData": []
+    ]
 }

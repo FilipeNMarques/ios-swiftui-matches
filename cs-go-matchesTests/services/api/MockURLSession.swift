@@ -9,7 +9,8 @@ import Foundation
 
 @testable import cs_go_matches
 
-class MockURLSession: URLSessionProtocol {
+final class MockURLSession: URLSessionProtocol {
+
     var mockData: Data?
     var mockResponse: URLResponse?
     var mockError: Error?
@@ -17,6 +18,7 @@ class MockURLSession: URLSessionProtocol {
 
     func data(for request: URLRequest) async throws -> (Data, URLResponse) {
         lastRequest = request
+
         if let error = mockError {
             throw error
         }

@@ -9,7 +9,7 @@ import XCTest
 
 @testable import cs_go_matches
 
-class MockMatchService: MatchServiceProtocol {
+final class MockMatchService: MatchServiceProtocol {
 
     var mockMatches: [MatchListModel] = []
     var mockPlayers: [PlayerModel] = []

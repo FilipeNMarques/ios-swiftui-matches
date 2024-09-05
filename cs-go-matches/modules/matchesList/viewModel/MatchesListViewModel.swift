@@ -9,6 +9,7 @@ import SwiftUI
 
 @Observable
 class MatchesListViewModel: ObservableObject {
+
     var matches: [MatchListModel] = []
     var isLoading = false
     var error: AppError?
@@ -22,6 +23,7 @@ class MatchesListViewModel: ObservableObject {
     @MainActor
     func fetchMatches() async {
         isLoading = true
+
         do {
             matches = try await matchService.fetchMatches()
         } catch let error as AppError {
@@ -31,6 +33,7 @@ class MatchesListViewModel: ObservableObject {
             self.error = .unknown(error.localizedDescription)
             debugPrint("unknown error: ", error)
         }
+
         isLoading = false
     }
 }

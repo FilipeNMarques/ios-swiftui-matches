@@ -39,6 +39,7 @@ struct MatchDetailView: View {
         HStack(spacing: 8) {
             Text(viewModel.matchInfo.leagueName)
                 .font(.title2)
+
             Text(viewModel.matchInfo.serieName)
                 .font(.title2)
         }
@@ -47,7 +48,9 @@ struct MatchDetailView: View {
     private var teamsSection: some View {
         HStack(spacing: 40) {
             TeamView(team: viewModel.matchInfo.opponents[0])
+
             Text("vs")
+
             TeamView(team: viewModel.matchInfo.opponents[1])
         }
     }
@@ -104,6 +107,7 @@ struct PlayerRowViewLeft: View {
                     .font(.subheadline)
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, alignment: .trailing)
+
                 Text(player.firstName ?? "")
                     .lineLimit(1)
                     .font(.caption)
@@ -151,6 +155,7 @@ struct PlayerRowViewRight: View {
                     .font(.subheadline)
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, alignment: .leading)
+
                 Text(player.firstName ?? "")
                     .lineLimit(1)
                     .font(.caption)

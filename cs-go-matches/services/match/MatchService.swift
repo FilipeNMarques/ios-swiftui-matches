@@ -8,6 +8,7 @@
 import Foundation
 
 final class MatchService: MatchServiceProtocol {
+
     private let apiService: APIServiceProtocol
 
     init(apiService: APIServiceProtocol = APIService()) {
@@ -27,6 +28,7 @@ final class MatchService: MatchServiceProtocol {
             if match == nil {
                 print("Failed to parse match: \(json)")
             }
+
             return match
         }
 

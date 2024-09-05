@@ -32,10 +32,10 @@ struct MatchesListView: View {
                         .navigationBarBackButtonHidden(true)
                         .environmentObject(MatchDetailViewModel(matchInfo: matchDetail))
                         .toolbar {
-                        ToolbarItem(placement: .navigationBarLeading) {
-                            CustomBackButton()
+                            ToolbarItem(placement: .navigationBarLeading) {
+                                CustomBackButton()
+                            }
                         }
-                    }
                 }
             }
             .overlay {

@@ -24,10 +24,10 @@ struct MatchDetailModel: Hashable {
 
     static func == (lhs: MatchDetailModel, rhs: MatchDetailModel) -> Bool {
         return lhs.id == rhs.id &&
-               lhs.leagueName == rhs.leagueName &&
-               lhs.serieName == rhs.serieName &&
-               lhs.opponents == rhs.opponents &&
-               lhs.beginAt == rhs.beginAt
+        lhs.leagueName == rhs.leagueName &&
+        lhs.serieName == rhs.serieName &&
+        lhs.opponents == rhs.opponents &&
+        lhs.beginAt == rhs.beginAt
     }
 }
 
@@ -44,7 +44,7 @@ struct OpponentModel: Hashable {
 
     static func == (lhs: OpponentModel, rhs: OpponentModel) -> Bool {
         return lhs.id == rhs.id &&
-               lhs.name == rhs.name &&
-               lhs.imageUrl == rhs.imageUrl
+        lhs.name == rhs.name &&
+        lhs.imageUrl == rhs.imageUrl
     }
 }

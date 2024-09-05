@@ -8,10 +8,11 @@
 import Foundation
 @testable import cs_go_matches
 
-class MockAPIService: APIServiceProtocol {
+final class MockAPIService: APIServiceProtocol {
+    
     var mockData: Data?
     var mockError: Error?
-
+    
     func request(_ url: URL) async throws -> Data {
         if let error = mockError {
             throw error

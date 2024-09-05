@@ -7,15 +7,13 @@
 
 import Foundation
 
-import Foundation
-
 struct PlayerModel: Codable, Identifiable {
     let id: Int
     let name: String
     let firstName: String?
     let imageUrl: String?
     let teamId: Int
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case name

@@ -9,6 +9,7 @@ import Foundation
 
 @Observable
 class MatchDetailViewModel: ObservableObject {
+
     let matchInfo: MatchDetailModel
     var playersByTeam: [Int: [PlayerModel]] = [:]
     var isLoading = false
@@ -24,6 +25,7 @@ class MatchDetailViewModel: ObservableObject {
     @MainActor
     func fetchMatchDetails() async {
         isLoading = true
+
         do {
             let players = try await matchService.fetchMatchDetails(matchId: matchInfo.id)
             playersByTeam = Dictionary(grouping: players, by: { $0.teamId })
@@ -34,6 +36,7 @@ class MatchDetailViewModel: ObservableObject {
             self.error = .unknown(error.localizedDescription)
             print("Unknown error: ", error)
         }
+
         isLoading = false
     }
 }

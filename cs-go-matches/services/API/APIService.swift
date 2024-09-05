@@ -16,6 +16,7 @@ protocol APIServiceProtocol {
 }
 
 final class APIService: APIServiceProtocol {
+
     private let session: URLSessionProtocol
 
     init(session: URLSessionProtocol = URLSession.shared) {

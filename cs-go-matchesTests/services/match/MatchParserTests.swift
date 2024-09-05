@@ -10,11 +10,11 @@ import XCTest
 @testable import cs_go_matches
 
 final class MatchParserTests: XCTestCase {
-
+    
     func testParseValidMatch() {
         let json = TestData.validMatchJSON
         let match = MatchParser.parse(json: json)
-
+        
         XCTAssertNotNil(match)
         XCTAssertEqual(match?.id, 1)
         XCTAssertEqual(match?.name, "Team A vs Team B")
@@ -27,11 +27,11 @@ final class MatchParserTests: XCTestCase {
         XCTAssertEqual(match?.opponents[0].name, "Team A")
         XCTAssertEqual(match?.opponents[1].name, "Team B")
     }
-
+    
     func testParseInvalidMatch() {
         let json = TestData.invalidMatchJSON
         let match = MatchParser.parse(json: json)
-
+        
         XCTAssertNil(match)
     }
 }

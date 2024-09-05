@@ -9,7 +9,8 @@ import XCTest
 
 @testable import cs_go_matches
 
-final class MatchServiceTests: XCTestCase {
+final class MatchListServiceTests: XCTestCase {
+
     var sut: MatchService!
     var mockAPIService: MockAPIService!
 
@@ -37,6 +38,7 @@ final class MatchServiceTests: XCTestCase {
 
     func testFetchMatchesThrowsErrorWhenAPIFails() async {
         struct TestError: Error {}
+
         mockAPIService.mockError = TestError()
 
         do {
