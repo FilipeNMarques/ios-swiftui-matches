@@ -1,6 +1,6 @@
 # CS:GO Matches App
 
-CSTV is an iOS app that displays CS:GO matches happening across several worldwide tournaments. Using the PandaScore API to fetch match data.
+CS:GO Matches is an iOS app that displays CS:GO matches happening across several worldwide tournaments. Using the PandaScore API to fetch match data.
 
 ## Screenshots
 
